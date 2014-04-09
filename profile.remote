@@ -1,0 +1,6 @@
+# vim: syntax=sh ts=4 sw=4 sts=4 sr et
+
+if [ $SSH_TTY ] && [ -z $STY ]; then
+    exec /usr/bin/screen -d -RR -A
+fi
+

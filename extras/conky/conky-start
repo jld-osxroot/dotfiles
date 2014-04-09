@@ -1,0 +1,6 @@
+#!/bin/bash
+
+conky -c ~/.conky/cal &
+conky -c ~/.conky/clock &
+conky -c ~/.conky/harddrive
+

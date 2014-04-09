@@ -1,0 +1,33 @@
+# vim: syntax=sh ts=4 sw=4 sts=4 sr et
+
+PATH="/home/$USER/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$PATH"
+
+# default command options
+alias ls='ls --group-directories-first --color'
+alias ll='ls -lhG '
+alias xps='ps -ax '
+alias xpsg='ps -ax | grep -i'
+
+# shortcuts
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+alias apt='sudo aptitude'
+alias pip='sudo pip'
+alias gem='sudo gem'
+alias top='htop'
+
+alias ff='ack-grep '
+function fff() { ack-grep --color-match=red -A 6 "function $1"; }
+function ffc() { ack-grep --color-match=red -A 6 "class $1"; }
+
+
+# dark background
+export LS_COLORS='di=1;36:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:*.deb=90'
+
+# light background
+#export LS_COLORS='no=00:fi=00:di=00;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:ex=00;31'
+
+export GOPATH="/opt/golang"
+
+unset command_not_found_handle
+

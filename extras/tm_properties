@@ -1,0 +1,15 @@
+# Settings
+fontName         = "Menlo"
+fontSize         = 16
+fileBrowserGlob  = "{*,.tm_properties,.htaccess}"
+softTabs         = false
+softWrap         = false
+tabSize          = 4
+
+[ *.py ]
+tabSize          = 4
+
+
+[ text.html.markdown ]
+softWrap            = true
+wrapColumn          = "Use Window Frame"

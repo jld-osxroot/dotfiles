@@ -1,0 +1,59 @@
+# vim: syntax=sh ts=4 sw=4 sts=4 sr et
+
+# command aliases
+alias xps='ps -ax '
+alias xpsg='ps -ax | grep -i'
+alias grep='grep -i'
+alias curl='curl --silent'
+alias wget='wget -q'
+alias screen='screen -R -U -A '
+
+# moving around
+alias cd..='cd ..'
+alias cd...='cd ../../'
+alias cd....='cd ../../../'
+alias cdt='cd ~/tmp/'
+
+# shortcuts
+alias svnig='svn --ignore-externals'
+alias svnd='svn --config-option config:helpers:diff-cmd=colordiff diff'
+alias vihosts='sudo vim /etc/hosts'
+
+function rr() { remind $1 ~/.remind; }
+alias rr-month='remind -c+4 ~/.remind'
+
+function extract() {
+  if [[ $# -eq 1 ]]; then
+    if [[ -f $1 ]]; then
+      case "$1" in
+        *.bz2)
+          bunzip2 $1
+          ;;
+        *.gz)
+          gunzip $1
+          ;;
+        *.tar)
+          tar xvf $1
+          ;;
+        *.tar.bz2|*.tbz2)
+          tar xvjf $1
+          ;;
+        *.tar.gz|*.tgz)
+          tar xvzf $1
+          ;;
+        *.zip)
+          unzip $1
+          ;;
+        *)
+          echo -e "Unable to uncompress file '$1' because of unsupported format"
+          ;;
+      esac
+    else
+      echo -e "Unable to uncompress missing file '$1'"
+    fi
+  else
+    echo "Usage: extract <file>" >&2
+  fi
+}
+
+

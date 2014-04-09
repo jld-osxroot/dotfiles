@@ -1,0 +1,37 @@
+# vim: syntax=sh ts=4 sw=4 sts=4 sr et
+
+PATH="/Users/$USER/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+alias apache-stop='sudo killall httpd'
+alias apache-start='sudo /usr/sbin/httpd -f /etc/apache2/httpd.conf'
+alias vaconf='sudo vim /etc/apache2/httpd.conf'
+
+# command aliases
+alias ls='ls -G '
+alias ll='ls -lh '
+
+alias ff='ack '
+function fff() { ack-grep --color-match=red -A 6 "function $1"; }
+function ffc() { ack-grep --color-match=red -A 6 "class $1"; }
+
+# laravel tail
+alias tlog='tail -f app/storage/logs/`ls -1rt app/storage/logs/ | tail -1`'
+
+
+# Google App Engine
+GAE_HOME="/opt/gae-python-1.8.3"
+PATH="$GAE_HOME:$PATH"
+
+# Go
+GOROOT="/opt/golang/go"
+GOPATH="/opt/golang/go/src/pkg"
+export GOROOT
+export GOPATH
+
+PATH="$GOROOT/bin:$PATH"
+
+# Python
+PATH="/anaconda/bin:$PATH"
+
+export PATH
+

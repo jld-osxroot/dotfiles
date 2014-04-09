@@ -1,0 +1,28 @@
+{
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow.tmTheme",
+
+	"font_face": "Droid Sans Mono",
+	"font_size": 14,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"ActionScript",
+		"AppleScript",
+		"ASP",
+		"C#",
+		"Clojure",
+		"D",
+		"Erlang",
+		"Haskell",
+		"Lisp",
+		"Lua",
+		"Objective-C",
+		"Vintage"
+	],
+	"open_files_in_new_window": false,
+	"remember_open_files": false,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": false,
+	"trim_trailing_white_space_on_save": true
+}

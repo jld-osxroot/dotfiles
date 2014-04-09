@@ -1,0 +1,237 @@
+" vim config by mkaz
+
+set nocompatible
+filetype off          " required by vundle
+
+" Package Management by Vundle
+" https://github.com/gmarik/vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'mileszs/ack.vim'
+Bundle 'matze/dwm.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'godlygeek/tabular'
+Bundle "bufexplorer.zip"
+Bundle 'ZoomWin'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle 'garbas/vim-snipmate'
+Bundle 'xsbeats/vim-blade'
+
+
+" --------------------------------------------------
+" Settings 
+" --------------------------------------------------
+syntax on
+set t_Co=256
+
+"set background=light
+"colorscheme zellner
+
+set background=dark
+colorscheme Tomorrow-Night
+
+set encoding=utf-8
+set number            " show line numbers
+set ruler
+set ls=2
+
+" Whitespace stuff
+set nowrap
+set autoindent
+set smartindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
+set showcmd
+set ignorecase        " ignore case while searching
+set hidden            " allows to switch to/from unsaved buffers
+
+set ttyfast
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+
+
+" shhhh
+set visualbell
+set novisualbell
+set nobackup
+set noerrorbells
+autocmd VimEnter * set vb t_vb=
+
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set history=1000
+set undolevels=1000
+
+set wildmode=longest,list,full
+set wildignore+=.hg,.git,.svn         "version control
+set wildignore+=*.rbc,*.class,*.pyc   "compiled formats
+set wildignore+=*.DS_Store            "OSX files
+
+set nobackup
+set noswapfile
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Use modeline overrides
+set modeline
+set modelines=10
+
+
+
+" --------------------------------------------------
+" File Specific Configurations
+" --------------------------------------------------
+
+" load the plugin and indent settings for the detected filetype
+filetype plugin indent on
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+
+" md, markdown, and mk are markdown and define buffer-local preview
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} :Wrap
+
+" Python File Types (use spaces)
+au FileType python set expandtab
+au FileType python map <Leader>r :w<CR>:!python %<CR>
+
+" golang
+au BufRead,BufNewFile *.go set filetype=go
+
+au BufRead,BufNewFile *.{tpl,eco}    set ft=html
+
+" Enable syntastic syntax checking
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
+
+" MacVIM shift+arrow-keys behavior (required in .vimrc)
+let macvim_hig_shift_movement = 1
+
+" JSLint throws errors, disable
+let g:JSLintHighlightErrorLine = 0
+
+" Remember last location in file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+
+
+" --------------------------------------------------
+"  Functions
+" --------------------------------------------------
+function s:setupMarkup()
+    set wm=2 tw=80
+endfunction
+
+
+
+" --------------------------------------------------
+"  Key Bindings
+" --------------------------------------------------
+
+let mapleader=","
+
+" :w!! to save with sudo
+ca w!! w !sudo tee >/dev/null "%"
+
+" Unhighlight Search using ,SPC
+nmap <silent> <Leader><Space> :nohlsearch<CR>   
+
+" NERDTree configuration
+let NERDTreeIgnore=['\.rbc$', '\~$']
+map <F2> :NERDTreeToggle<CR>
+
+" Command-Shift-F for Ack
+map <Leader>f :Ack<space>
+
+" Command-/ to toggle comments
+map <Leader>/ <plug>NERDCommenterToggle<CR>
+
+" ZoomWin configuration
+map <Leader><Leader> :ZoomWin<CR>
+
+" CTags
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+
+" Ctrl P
+map <Leader>p :CtrlP<CR>
+set wildignore+=*vendor/*
+set wildignore+=*app/storage/*
+let g:ctrlp_working_path_mode = 0
+
+
+" Buffer Navigation
+map <Leader>3 :b#<CR>
+map <Leader>n :bn<CR>
+
+" DWM Window Manager
+map <Leader>m :call DWM_Focus()<CR>
+map <Leader>c :call DWM_Close()<CR>
+
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+
+" Surround with Quote
+map <Leader>' ysiw'
+map <Leader>" ysiw"
+
+" Text Expansion
+nmap <F5> a<C-R>=strftime("%b %d, %Y %I:%M %p")<CR><Esc>
+imap <F5> <C-R>=strftime("%b %d, %Y %I:%M %p")<CR>
+
+
+" map scratch
+map <Leader>s :edit ~/scratch.md<CR>
+
+" Toggle Spellcheck
+:map <F5> :setlocal spell! spelllang=en_us<CR>
+
+" Map F1 to ESC
+map <F1> <Esc>
+imap <F1> <Esc>
+
+" Source the vimrc file after saving it
+ if has("autocmd")
+  autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
+endif
+
+map <Leader>; g_a;<Esc>
+
+" :Wrap command
+command! -nargs=* Wrap set wrap linebreak nolist
+
+" auto align = :
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+
+" Add Spaces inside parentheses, A8C Style
+map <Leader>o ci(<space><space><Esc>hp 
+
+set nofoldenable    " disable folding
+
+

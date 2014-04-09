@@ -1,0 +1,61 @@
+
+# Conky settings
+background yes
+update_interval 1
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+text_buffer_size 2048
+
+# Window specifications
+own_window yes
+own_window_type desktop
+own_window_argb_visual no
+own_window_argb_value 255
+own_window_transparent yes
+own_window_hints undecorate,below,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+
+alignment top_right
+gap_x 8
+gap_y 8 
+
+# Graphics settings
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings
+use_xft yes
+xftalpha 0
+text_buffer_size 2048
+uppercase no
+default_color AAA
+
+
+TEXT
+${voffset 32}${font Inconsolata:size=14}${exec remind -c+1 ~/.remind}${font}
+
+
+${font Droid Sans Mono:pixelsize=14}
+$alignr Alt+F2        Run Dialog
+$alignr Alt+F3          Alt Menu
+$alignr Super+Space    Main Menu
+$alignr Super+Tab    Client Menu
+$alignr Super+t         Terminal
+$alignr Super+f     File Manager
+$alignr Super+e           Editor
+$alignr Super+m     Media Player
+$alignr Super+w      Web Browser
+$alignr Super+h     Task Manager
+$alignr Super+l      Lock Screen
+$alignr Super+v   Volume Control
+$alignr Super+x           Logout
+$alignr PrtSc         Screenshot
+${font}
+
