@@ -21,14 +21,22 @@ else
 fi
 
 # run host specific profile
-if [[ -e ~/dotfiles/secret/profile.$SHORT_HOSTNAME ]]; then
-    source ~/dotfiles/secret/profile.$SHORT_HOSTNAME
+if [[ -e ~/Documents/Sync/dot-secret/profile.$SHORT_HOSTNAME ]]; then
+    source ~/Documents/Sync/dot-secret/profile.$SHORT_HOSTNAME
 fi
 
 # run a8c profile
-if [[ -e ~/dotfiles/secret/profile.a8c ]]; then
-    source ~/dotfiles/secret/profile.a8c
+if [[ -e ~/Documents/Sync/dot-secret/profile.a8c ]]; then
+    source ~/Documents/Sync/dot-secret/profile.a8c
 fi
+
+# remote servers
+remotehosts=( golf mkaz )
+for h in "${remotehosts}"
+    if [[ $h = $SHORT_HOSTNAME ]];
+        source ~/dotfiles/profile.remote
+    fi
+do
 
 # prompt (colors defined in colors file)
 export PS1="\[$Cyan\]\u\[$Red\]@\[$Cyan\]\h \[$Green\]\W \[$Color_Off\]\$ "
