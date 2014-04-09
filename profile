@@ -32,11 +32,12 @@ fi
 
 # remote servers
 remotehosts=( golf mkaz )
-for h in "${remotehosts}"
-    if [[ $h = $SHORT_HOSTNAME ]];
+for h in "${remotehosts}" 
+do
+    if [[ $h == $SHORT_HOSTNAME ]]; then
         source ~/dotfiles/profile.remote
     fi
-do
+done
 
 # prompt (colors defined in colors file)
 export PS1="\[$Cyan\]\u\[$Red\]@\[$Cyan\]\h \[$Green\]\W \[$Color_Off\]\$ "
