@@ -1,6 +1,6 @@
 # vim: syntax=sh ts=4 sw=4 sts=4 sr et
 
-PATH="/home/$USER/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$PATH"
+PATH="$HOME/bin:$HOME/vendor/bin:/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$PATH"
 
 # default command options
 alias ls='ls --group-directories-first --color'

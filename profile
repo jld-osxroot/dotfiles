@@ -32,7 +32,9 @@ fi
 
 
 # prompt (colors defined in colors file)
-export PS1="\[$Cyan\]\u\[$Red\]@\[$Cyan\]\h \[$Green\]\W \[$Color_Off\]\$ "
+FANCY=$'\u26A1' # lighting bolt
+FANCY=$'\u2731'
+export PS1="\[$Cyan\]\u\[$Red\]@\[$Cyan\]\h \[$Green\]\W \[$Yellow\]$FANCY \[$Color_Off\] "
 
 #export LS_COLORS='di=1;36:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:*.deb=90'
 #export LSCOLORS=GxFxCxDxBxegedabagaced
