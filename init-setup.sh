@@ -12,6 +12,11 @@ ln -s dotfiles/rcfiles/remind .remind
 ln -s dotfiles/rcfiles/taskrc .taskrc
 ln -s ~/Documents/Sync/pass-store .password-store
 
+rm .vimrc 
+ln -s dotfiles/vim-files/vimrc .vimrc
+ln -s dotfiles/vim-files .vim
+
+
 ## update & upgrade
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -31,29 +36,6 @@ select yn in "Yes" "No"; do
             break;;
     esac
 done
-
-
-# vim 
-echo "Setup Vim ?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) 
-            cd
-            rm .vimrc 
-            ln -s dotfiles/vim-files/vimrc .vimrc
-
-            mkdir ~/.vim/
-            cd ~/.vim/
-            cp -r ~/dotfiles/vim-files/vim-colors ~/.vim/colors
-            unzip ~/dotfiles/vim-files/CSApprox.zip
-            sudo apt-get -y install vim vim-syntax-go
-            git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-            break;;
-        No )
-            break;;
-    esac
-done
-
 
 
 # data tools
@@ -113,7 +95,7 @@ select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
 			sudo apt-get -y install mysql-client mysql-server memcached apache2 
-			sudo apt-get -y install php5 php5-cli php5-common php5-curl php5-dev php5-imagick php5-memcached php5-mysql php5-xcache php5-xdebug php5-mcrypt php5-json
+			sudo apt-get -y install php5 php5-cli php5-common php5-curl php5-dev php5-memcached php5-mysql php5-xcache php5-xdebug php5-mcrypt php5-json
 			break;;
 		No )
 			break;;

@@ -1,9 +1,9 @@
 {
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 
 	"font_face": "Droid Sans Mono",
-	"font_size": 14,
+	"font_size": 12,
 	"hot_exit": false,
 	"ignored_packages":
 	[

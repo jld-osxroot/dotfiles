@@ -30,14 +30,6 @@ if [[ -e ~/Documents/Sync/dot-secret/profile.a8c ]]; then
     source ~/Documents/Sync/dot-secret/profile.a8c
 fi
 
-# remote servers
-remotehosts=( golf mkaz )
-for h in "${remotehosts}" 
-do
-    if [[ $h == $SHORT_HOSTNAME ]]; then
-        source ~/dotfiles/profile.remote
-    fi
-done
 
 # prompt (colors defined in colors file)
 export PS1="\[$Cyan\]\u\[$Red\]@\[$Cyan\]\h \[$Green\]\W \[$Color_Off\]\$ "

@@ -19,6 +19,9 @@ alias svnig='svn --ignore-externals'
 alias svnd='svn --config-option config:helpers:diff-cmd=colordiff diff'
 alias vihosts='sudo vim /etc/hosts'
 
+# laravel tail
+alias tlog='tail -f app/storage/logs/*'
+
 function rr() { remind $1 ~/.remind; }
 alias rr-month='remind -c+4 ~/.remind'
 
