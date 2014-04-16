@@ -46,12 +46,12 @@ syntax on
 set t_Co=256
 
 set background=dark
-colorscheme solarized   " Tomorrow-Night
+colorscheme Tomorrow-Night  
 
 set encoding=utf-8
 set number            " show line numbers
 set ruler
-set ls=2
+set laststatus=2
 
 " Whitespace stuff
 set nowrap
@@ -61,6 +61,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+set scrolloff=2       " scroll 2 lines top/bottom
 set showcmd
 set ignorecase        " ignore case while searching
 set hidden            " allows to switch to/from unsaved buffers
@@ -71,6 +72,7 @@ highlight nonText ctermbg=NONE
 
 highlight ColorColumn ctermbg=Black
 set colorcolumn=81
+
 
 " shhhh
 set visualbell
@@ -144,7 +146,9 @@ if has("autocmd")
     \| exe "normal g'\"" | endif
 endif
 
-
+" color 80 column
+highlight ColorColumn ctermbg=8
+set colorcolumn=81
 
 " --------------------------------------------------
 "  Key Bindings
@@ -179,7 +183,8 @@ map <Leader>p :CtrlP<CR>
 set wildignore+=*vendor/*
 set wildignore+=*app/storage/*
 let g:ctrlp_working_path_mode = 0
-
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_use_caching = 0
 
 " Buffer Navigation
 map <Leader>3 :b#<CR>
@@ -197,31 +202,30 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-
 " Surround with Quote
 map <Leader>' ysiw'
 map <Leader>" ysiw"
 
-" Text Expansion
-nmap <F5> a<C-R>=strftime("%b %d, %Y %I:%M %p")<CR><Esc>
-imap <F5> <C-R>=strftime("%b %d, %Y %I:%M %p")<CR>
-
-
-" map scratch
-map <Leader>s :edit ~/scratch.md<CR>
+" Map F1 to ESC
+map <F1> <Esc>
+imap <F1> <Esc>
 
 " Toggle Spellcheck
 :map <F5> :setlocal spell! spelllang=en_us<CR>
 
-" Map F1 to ESC
-map <F1> <Esc>
-imap <F1> <Esc>
+" Text Expansion
+nmap <F6> a<C-R>=strftime("%b %d, %Y %I:%M %p")<CR><Esc>
+imap <F6> <C-R>=strftime("%b %d, %Y %I:%M %p")<CR>
+
+" map scratch
+map <Leader>s :edit ~/tmp/scratch.md<CR>
 
 " Source the vimrc file after saving it
  if has("autocmd")
   autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
 endif
 
+" add semi colon at end of line
 map <Leader>; g_a;<Esc>
 
 " :Wrap command
@@ -233,7 +237,7 @@ vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
-" Add Spaces inside parentheses, A8C Style
+" Add Spaces inside parentheses, WordPress Style
 map <Leader>o ci(<space><space><Esc>hp 
 
 " Math
