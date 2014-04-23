@@ -33,7 +33,7 @@ fi
 
 # prompt (colors defined in colors file)
 FANCY="\342\226\270"
-export PS1="\[$Cyan\]\h: \[$Green\]\W \[$Yellow\]$FANCY \[$Color_Off\] "
+export PS1="\[$Blue\][\t] \[$Cyan\]\h: \[$Green\]\W \[$Yellow\]$FANCY \[$Color_Off\] "
 
 
 PATH=".:$PATH"
