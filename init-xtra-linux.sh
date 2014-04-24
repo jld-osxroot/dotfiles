@@ -32,6 +32,8 @@ sudo ufw allow ssh
 sudo ufw limit ssh
 sudo ufw allow www
 
+# remove multi-arch support (default ubuntu)
+dpkg --remove-architecture i386
 
 # disable ipv6
 echo "blacklist ipv6" > /etc/modprobe.d/blacklist.conf

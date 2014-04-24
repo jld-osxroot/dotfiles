@@ -35,6 +35,7 @@ Bundle 'ZoomWin'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle 'xsbeats/vim-blade'
+Bundle 'jnwhiteh/vim-golang'
 
 " learning
 Bundle 'tommcdo/vim-exchange'
