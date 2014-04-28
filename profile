@@ -32,10 +32,8 @@ fi
 
 
 # prompt (colors defined in colors file)
-#FANCY=$'\u26A1' # lighting bolt
-#FANCY=$'\u2731'
-FANCY="\342\217\251"
-export PS1="\[$Cyan\]\h: \[$Green\]\W \[$Yellow\]$FANCY \[$Color_Off\] "
+FANCY="\342\226\270"
+export PS1="\[$Blue\][\t] \[$Cyan\]\h: \[$Green\]\W \[$Yellow\]$FANCY \[$Color_Off\] "
 
 
 PATH=".:$PATH"
