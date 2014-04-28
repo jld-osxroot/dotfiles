@@ -231,6 +231,9 @@ map <Leader>; g_a;<Esc>
 " :Wrap command
 command! -nargs=* Wrap set wrap linebreak nolist
 
+" format current paragraph (hard wrap)
+nnoremap Q gqip
+
 " auto align = :
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
@@ -242,4 +245,5 @@ map <Leader>o ci(<space><space><Esc>hp
 
 " Math
 nmap ++ i<c-R>=
+
 
