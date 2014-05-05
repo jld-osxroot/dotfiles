@@ -1,4 +1,4 @@
 
-include /home/mkaz/Documents/Sync/reminders/holidays.txt
-include /home/mkaz/Documents/Sync/reminders/appointments.txt
-include /home/mkaz/Documents/Sync/reminders/birthdays.txt
+include /Users/mkaz/Documents/Sync/reminders/holidays.txt
+include /Users/mkaz/Documents/Sync/reminders/appointments.txt
+include /Users/mkaz/Documents/Sync/reminders/birthdays.txt

@@ -32,7 +32,7 @@ open $HOME/dotfiles/extras/Tomorrow-Night.terminal
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 # system stuff
-brew install ack git pwgen wget pandoc s3cmd pass
+brew install ack git pwgen wget pandoc s3cmd pass remind mtr task
 
 
 # Python Setup use Anaconda

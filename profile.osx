@@ -17,21 +17,21 @@ function ffc() { ack-grep --color-match=red -A 6 "class $1"; }
 # laravel tail
 alias tlog='tail -f app/storage/logs/`ls -1rt app/storage/logs/ | tail -1`'
 
+# pass - bash completion
+if [[ -e /usr/local/etc/bash_completion.d/password-store ]]; then
+    source /usr/local/etc/bash_completion.d/password-store
+fi
 
-# Google App Engine
-GAE_HOME="/opt/gae-python-1.8.3"
-PATH="$GAE_HOME:$PATH"
+# BasicTex from: http://tug.org/mactex/morepackages.html
+PATH="/usr/local/texlive/2013basic/bin/x86_64-darwin/:$PATH"
 
 # Go
-GOROOT="/opt/golang/go"
-GOPATH="/opt/golang/go/src/pkg"
-export GOROOT
-export GOPATH
-
-PATH="$GOROOT/bin:$PATH"
+export GOROOT="/usr/local/go"
+export GOPATH="/usr/local/go/src/pkg"
+PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 # Python
-PATH="/anaconda/bin:$PATH"
+PATH="/opt/anaconda/bin:$PATH"
 
 export PATH
 
