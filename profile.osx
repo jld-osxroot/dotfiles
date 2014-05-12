@@ -9,6 +9,7 @@ alias vaconf='sudo vim /etc/apache2/httpd.conf'
 # command aliases
 alias ls='ls -G '
 alias ll='ls -lh '
+alias git='hub'
 
 alias ff='ack '
 function fff() { ack-grep --color-match=red -A 6 "function $1"; }

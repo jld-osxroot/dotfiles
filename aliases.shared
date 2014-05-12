@@ -7,6 +7,7 @@ alias grep='grep -i'
 alias curl='curl --silent'
 alias wget='wget -q'
 alias screen='screen -R -U -A '
+alias make='make --quiet'
 
 # moving around
 alias cd..='cd ..'

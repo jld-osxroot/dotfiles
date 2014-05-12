@@ -47,7 +47,7 @@ syntax on
 set t_Co=256
 
 set background=dark
-colorscheme Tomorrow-Night  
+colorscheme Taipei
 
 set encoding=utf-8
 set number            " show line numbers
