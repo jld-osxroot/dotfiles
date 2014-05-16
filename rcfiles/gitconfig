@@ -5,3 +5,5 @@
 [alias]
     pom = push origin master
     cam = commit -a -m
+[push]
+	default = simple
