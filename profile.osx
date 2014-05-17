@@ -34,5 +34,6 @@ PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 # Python
 PATH="/opt/anaconda/bin:$PATH"
 
+export ANDROID_HOME="/Users/mkaz/workspace/android-sdk-macosx"
 export PATH
 
