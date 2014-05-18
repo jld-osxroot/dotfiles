@@ -1,6 +1,6 @@
 # vim: syntax=sh ts=4 sw=4 sts=4 sr et
 
-PATH="/Users/$USER/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 alias apache-stop='sudo killall httpd'
 alias apache-start='sudo /usr/sbin/httpd -f /etc/apache2/httpd.conf'

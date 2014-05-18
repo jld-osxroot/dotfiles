@@ -1,15 +1,22 @@
 # Settings
-fontName         = "Menlo"
-fontSize         = 16
+fontName         = "Inconsolata-g"
+fontSize         = 14
 fileBrowserGlob  = "{*,.tm_properties,.htaccess}"
 softTabs         = false
 softWrap         = false
 tabSize          = 4
 
+## exclude stuff
+myExtraExcludes = "log,vendor,tmp"
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}" 
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}" 
+
 [ *.py ]
 tabSize          = 4
-
+softTabs         = true
 
 [ text.html.markdown ]
+spellChecking		= true
 softWrap            = true
+softTabs            = true
 wrapColumn          = "Use Window Frame"
