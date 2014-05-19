@@ -19,4 +19,4 @@ softTabs         = true
 spellChecking		= true
 softWrap            = true
 softTabs            = true
-wrapColumn          = "Use Window Frame"
+wrapColumn          = 80
