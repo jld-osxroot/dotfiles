@@ -30,6 +30,9 @@ if [[ -e ~/Documents/Sync/dot-secret/profile.a8c ]]; then
     source ~/Documents/Sync/dot-secret/profile.a8c
 fi
 
+settitle() {
+    printf "\033k$1\033\\"
+}
 
 # prompt (colors defined in colors file)
 FANCY="\342\226\270"
