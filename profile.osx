@@ -11,7 +11,7 @@ alias ls='ls -G '
 alias ll='ls -lh '
 alias git='hub'
 
-alias ff='ack '
+alias ff='ack --ignore-dir=languages'
 function fff() { ack-grep --color-match=red -A 6 "function $1"; }
 function ffc() { ack-grep --color-match=red -A 6 "class $1"; }
 
