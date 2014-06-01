@@ -21,13 +21,8 @@ else
 fi
 
 # run host specific profile
-if [[ -e ~/Documents/Sync/dot-secret/profile.$SHORT_HOSTNAME ]]; then
-    source ~/Documents/Sync/dot-secret/profile.$SHORT_HOSTNAME
-fi
-
-# run a8c profile
-if [[ -e ~/Documents/Sync/dot-secret/profile.a8c ]]; then
-    source ~/Documents/Sync/dot-secret/profile.a8c
+if [[ -e ~/.profile-extras ]]; then
+    source ~/.profile-extras
 fi
 
 settitle() {
