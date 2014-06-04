@@ -28,7 +28,7 @@ PATH="/usr/local/texlive/2013basic/bin/x86_64-darwin/:$PATH"
 
 # Go
 export GOROOT="/usr/local/go"
-export GOPATH="/usr/local/go/src/pkg"
+export GOPATH="$HOME/projects/gocode"
 PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 # Python
