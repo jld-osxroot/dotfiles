@@ -11,7 +11,7 @@ alias ls='ls -G '
 alias ll='ls -lh '
 alias git='hub'
 
-alias ff='ack --ignore-dir=languages'
+alias pt='the_platinum_searcher'
 function fff() { ack-grep --color-match=red -A 6 "function $1"; }
 function ffc() { ack-grep --color-match=red -A 6 "class $1"; }
 
@@ -23,9 +23,6 @@ if [[ -e /usr/local/etc/bash_completion.d/password-store ]]; then
     source /usr/local/etc/bash_completion.d/password-store
 fi
 
-# BasicTex from: http://tug.org/mactex/morepackages.html
-PATH="/usr/local/texlive/2013basic/bin/x86_64-darwin/:$PATH"
-
 # Go
 export GOROOT="/usr/local/go"
 export GOPATH="$HOME/projects/gocode"
@@ -34,6 +31,8 @@ PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 # Python
 PATH="/opt/anaconda/bin:$PATH"
 
-export ANDROID_HOME="/Users/mkaz/workspace/android-sdk-macosx"
+ANDROID_HOME="$HOME/workspace/android-sdk-macosx"
+PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+
 export PATH
 
