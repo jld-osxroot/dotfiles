@@ -109,6 +109,9 @@ set modelines=10
 
 set nofoldenable    " disable folding
 
+set listchars=tab:▸\ ,eol:¬
+
+
 " --------------------------------------------------
 " File Specific Configurations
 " --------------------------------------------------
