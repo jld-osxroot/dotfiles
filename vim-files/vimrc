@@ -112,6 +112,7 @@ set nofoldenable    " disable folding
 set listchars=tab:▸\ ,eol:¬
 
 
+
 " --------------------------------------------------
 " File Specific Configurations
 " --------------------------------------------------
@@ -128,6 +129,9 @@ au BufRead,BufNewFile *.md set tw=80 wrap linebreak nolist
 " Python File Types (use spaces)
 au FileType python set expandtab
 au FileType python map <Leader>r :w<CR>:!python %<CR>
+
+" PHP File Types (use tabs)
+au FileType php set noexpandtab
 
 " golang
 au BufRead,BufNewFile *.go set filetype=go
@@ -250,4 +254,5 @@ map <Leader>o ci(<space><space><Esc>hp
 " Math
 nmap ++ i<c-R>=
 
-
+" toggle show whitespace
+map <Leader>w :set list<CR>
