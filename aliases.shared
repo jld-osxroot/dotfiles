@@ -26,6 +26,10 @@ alias tlog='tail -f app/storage/logs/*'
 function rr() { remind $1 ~/.remind; }
 alias rr-month='remind -c+4 ~/.remind'
 
+alias pub-mkaz='ssh golf.mkaz.com "cd /opt/sites/mkaz.com/public-html; git pull"'
+alias pub-startsq='ssh golf.mkaz.com "cd /opt/sites/startsq; git pull"'
+
+
 function extract() {
   if [[ $# -eq 1 ]]; then
     if [[ -f $1 ]]; then
