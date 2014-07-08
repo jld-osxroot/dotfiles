@@ -2,10 +2,6 @@
 
 PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-alias apache-stop='sudo killall httpd'
-alias apache-start='sudo /usr/sbin/httpd -f /etc/apache2/httpd.conf'
-alias vaconf='sudo vim /etc/apache2/httpd.conf'
-
 # command aliases
 alias ls='ls -G '
 alias ll='ls -lh '

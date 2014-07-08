@@ -7,11 +7,9 @@
 UNAME=`uname`
 cd $HOME
 
-rm .profile .screenrc .remind .taskrc
+rm .profile .screenrc 
 ln -s dotfiles/profile .profile
 ln -s dotfiles/rcfiles/screenrc .screenrc
-ln -s dotfiles/rcfiles/remind .remind
-ln -s dotfiles/rcfiles/taskrc .taskrc
 ln -s ~/Documents/Sync/pass-store .password-store
 
 rm .vimrc 
@@ -32,7 +30,7 @@ open $HOME/dotfiles/extras/Tomorrow-Night.terminal
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 # system stuff
-brew install ack git pwgen wget pandoc s3cmd pass remind mtr task
+brew install ack git pwgen wget pandoc s3cmd pass mtr 
 
 
 # Python Setup use Anaconda
