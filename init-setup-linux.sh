@@ -5,11 +5,9 @@
 UNAME=`uname`
 cd $HOME
 
-rm .profile .screenrc .remind .taskrc
+rm .profile .screenrc 
 ln -s dotfiles/profile .profile
 ln -s dotfiles/rcfiles/screenrc .screenrc
-ln -s dotfiles/rcfiles/remind .remind
-ln -s dotfiles/rcfiles/taskrc .taskrc
 ln -s ~/Documents/Sync/pass-store .password-store
 
 rm .vimrc 
@@ -30,7 +28,7 @@ select yn in "Yes" "No"; do
         Yes ) 
             sudo apt-get -y install build-essential automake autoconf2.13 autoconf-archive gnu-standards autoconf-doc libtool gettext
             sudo apt-get -y install linux-headers-`uname -r`
-            sudo apt-get -y install curl wget ack-grep pwgen s3cmd dnsutils pandoc sysv-rc-conf htop ufw pass remind task
+            sudo apt-get -y install curl wget ack-grep pwgen s3cmd dnsutils pandoc sysv-rc-conf htop ufw pass 
             break;;
         No )
             break;;
