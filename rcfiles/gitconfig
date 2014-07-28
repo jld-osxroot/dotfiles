@@ -7,3 +7,7 @@
     cam = commit -a -m
 [push]
 	default = simple
+[github]
+	user = mkaz
+[ghi]
+	token = !security find-internet-password -a mkaz -s github.com -l 'ghi token' -w
