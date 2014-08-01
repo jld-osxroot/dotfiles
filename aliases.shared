@@ -28,6 +28,7 @@ function rr() { remind $1 ~/.remind; }
 alias rr-month='remind -c+4 ~/.remind'
 
 alias pub-mkaz='ssh golf.mkaz.com "cd /opt/sites/mkaz.com/public-html; git pull"'
+alias pub-xave='ssh golf.mkaz.com "cd /opt/sites/xave.in/; git pull"'
 alias pub-startsq='ssh golf.mkaz.com "cd /opt/sites/startsq; git pull"'
 
 
