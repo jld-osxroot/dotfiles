@@ -24,6 +24,10 @@ export GOROOT="/usr/local/go"
 export GOPATH="$HOME/projects/gocode"
 PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
+# App Engine
+PATH="/opt/go_appengine:$PATH"
+
+
 # Python
 PATH="/opt/anaconda/bin:$PATH"
 
