@@ -7,7 +7,7 @@ alias ls='ls -G '
 alias ll='ls -lh '
 alias git='hub'
 
-alias pt='the_platinum_searcher'
+#alias pt='the_platinum_searcher'
 function fff() { ack-grep --color-match=red -A 6 "function $1"; }
 function ffc() { ack-grep --color-match=red -A 6 "class $1"; }
 
@@ -20,9 +20,9 @@ if [[ -e /usr/local/etc/bash_completion.d/password-store ]]; then
 fi
 
 # Go
-export GOROOT="/usr/local/go"
+#export GOROOT="/usr/local/go"
 export GOPATH="$HOME/projects/gocode"
-PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+PATH="$GOPATH/bin:$PATH"
 
 # App Engine
 PATH="/opt/go_appengine:$PATH"
