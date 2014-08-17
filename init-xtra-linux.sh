@@ -31,6 +31,7 @@ sudo ufw default allow outgoing
 sudo ufw allow ssh
 sudo ufw limit ssh
 sudo ufw allow www
+sudo ufw enable
 
 # remove multi-arch support (default ubuntu)
 dpkg --remove-architecture i386
